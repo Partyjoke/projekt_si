@@ -138,6 +138,10 @@
                 <source>label_page_not_found</source>
                 <target>Page not found</target>
             </trans-unit>
+            <trans-unit id="message_category_contains_Advertisements">
+                <source>message_category_contains_Advertisements</source>
+                <target>you cannot delete category with advertisements</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

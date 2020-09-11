@@ -116,7 +116,7 @@
             </trans-unit>
             <trans-unit id="label_none">
                 <source>label_none</source>
-                <target>brak kategorii</target>
+                <target>nie znaleziono kategorii</target>
             </trans-unit>
             <trans-unit id="label_email">
                 <source>label_email</source>
@@ -128,7 +128,7 @@
             </trans-unit>
             <trans-unit id="action_successful">
                 <source>action_successful</source>
-                <target>Operacja udana</target>
+                <target>sukces</target>
             </trans-unit>
             <trans-unit id="label_advertising_page">
                 <source>label_advertising_page</source>
@@ -140,7 +140,7 @@
             </trans-unit>
             <trans-unit id="choose_password">
                 <source>choose_password</source>
-                <target>Wpisz swoje hasło</target>
+                <target>Podaj hasło</target>
             </trans-unit>
             <trans-unit id="label_new_password">
                 <source>label_password</source>
@@ -162,6 +162,10 @@
                 <source>label_page_not_found</source>
                 <target>Strona nie została znaleziona</target>
             </trans-unit>
+             <trans-unit id="message_category_contains_Advertisements">
+                            <source>message_category_contains_Advertisements</source>
+                            <target>nie możesz usunąć kategori z powązanymi ogloszeniami</target>
+                        </trans-unit>
         </body>
     </file>
 </xliff>
