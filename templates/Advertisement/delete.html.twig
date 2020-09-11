@@ -1,0 +1,11 @@
+{% include 'default/_form.html.twig' with {
+    page_title: 'action_delete',
+    page_title_param: {'%id%': Advertisement.id},
+    attr: {
+        method: 'DELETE',
+        action: url('Advertisement_delete', {'id': Advertisement.id}),
+    },
+    back_to_list_path: 'Advertisement_index',
+} %}
+
+

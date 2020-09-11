@@ -1,0 +1,10 @@
+{# templates/bundles/TwigBundle/Exception/error403.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Page not found</h1>
+
+    <p>
+        {{ 'label_page_not_found'|trans }} <a href="{{ path('category_index') }}"> {{ 'action_back_to_list'|trans }} </a>.
+    </p>
+{% endblock %}

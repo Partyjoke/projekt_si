@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'action_show_category_list'|trans }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'action_show_category_list'|trans }}</h1>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ url('category_create') }}" class="btn btn-primary">{{ 'action_create'|trans }}</a>
+    {% endif %}
+
+    {% if pagination is defined and pagination.items|length %}
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ knp_pagination_sortable(pagination, 'label_id'|trans, 'category.id') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label_created_at'|trans, 'category.createdAt') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label_updated_at'|trans, 'category.updatedAt') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label_title'|trans, 'category.title') }}</th>
+                <th>{{ 'action_show_details'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for category in pagination.items %}
+                <tr>
+                    <td>{{ category.id }}</td>
+                    <td>{{ category.createdAt|date }}</td>
+                    <td>{{ category.updatedAt|date }}</td>
+                    <td>{{ category.title }}</td>
+                    <td>
+                        <a href="{{ url('category_show', {id: category.id}) }}" title="{{ 'action_view'|trans }}">
+                            {{ 'action_view'|trans }}
+                        </a>
+                    </td>
+
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+    {% else %}
+        <p>
+            {{ 'message_empty_list'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}
+
+

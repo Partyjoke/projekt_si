@@ -1,0 +1,10 @@
+{% include 'default/_form.html.twig' with {
+    page_title: 'action_create',
+    attr: {
+        method: 'POST',
+        action: url('Advertisement_create')
+    },
+    back_to_list_path: 'Advertisement_index',
+} %}
+
+

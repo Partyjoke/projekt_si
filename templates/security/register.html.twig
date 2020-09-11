@@ -1,0 +1,8 @@
+{% include 'default/_form.html.twig' with {
+    page_title: 'action_register',
+    attr: {
+        method: 'POST',
+        action: url('app_register')
+    },
+    back_to_list_path: 'Advertisement_index',
+} %}

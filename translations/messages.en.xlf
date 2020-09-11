@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="label_actions">
+                <source>label_actions</source>
+                <target>Actions</target>
+            </trans-unit>
+            <trans-unit id="label_id">
+                <source>label_id</source>
+                <target>Id</target>
+            </trans-unit>
+            <trans-unit id="label_created_at">
+                <source>label_created_at</source>
+                <target>Created at</target>
+            </trans-unit>
+            <trans-unit id="label_updated_at">
+                <source>label_updated_at</source>
+                <target>Updated at</target>
+            </trans-unit>
+            <trans-unit id="label_title">
+                <source>label_title</source>
+                <target>Title</target>
+            </trans-unit>
+            <trans-unit id="label_content">
+                <source>label_content</source>
+                <target>Content</target>
+            </trans-unit>
+            <trans-unit id="label_tags">
+                <source>label_tags</source>
+                <target>Tags</target>
+            </trans-unit>
+            <trans-unit id="label_category">
+                <source>label_category</source>
+                <target>Ta</target>
+            </trans-unit>
+            <trans-unit id="message_empty_list">
+                <source>message_empty_list</source>
+                <target>Empty list.</target>
+            </trans-unit>
+            <trans-unit id="title_record_list">
+                <source>title_record_list</source>
+                <target>Records list</target>
+            </trans-unit>
+            <trans-unit id="action_back_to_list">
+                <source>action_back_to_list</source>
+                <target>Back to list</target>
+            </trans-unit>
+            <trans-unit id="action_view">
+                <source>action_view</source>
+                <target>Show actions</target>
+            </trans-unit>
+            <trans-unit id="title_category_details">
+                <source>title_category_details</source>
+                <target>Category details</target>
+            </trans-unit>
+            <trans-unit id="action_delete">
+                <source>action_delete</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="action_edit">
+                <source>action_edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="message_item_not_found">
+                <source>message_item_not_found</source>
+                <target>Not found</target>
+            </trans-unit>
+            <trans-unit id="message_form_error">
+                <source>message_form_error</source>
+                <target>Form error</target>
+            </trans-unit>
+            <trans-unit id="action_login">
+                <source>action_login</source>
+                <target>Log in</target>
+            </trans-unit>
+            <trans-unit id="action_logout">
+                <source>action_logout</source>
+                <target>Log out</target>
+            </trans-unit>
+            <trans-unit id="action_change_password">
+                <source>action_change_password</source>
+                <target>Change password</target>
+            </trans-unit>
+            <trans-unit id="action_show_details">
+                <source>action_show_details</source>
+                <target>Details</target>
+            </trans-unit>
+            <trans-unit id="action_create">
+                <source>action_create</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="action_create_advertisement">
+                <source>action_create_advertisement</source>
+                <target>Add your own advertisement</target>
+            </trans-unit>
+            <trans-unit id="action_show_advertisement_list">
+                <source>action_show_advertisement_list</source>
+                <target>Show advertisements</target>
+            </trans-unit>
+            <trans-unit id="action_show_category_list">
+                <source>action_show_category_list</source>
+                <target>Show categories</target>
+            </trans-unit>
+            <trans-unit id="action_security">
+                <source>action_security</source>
+                <target>Security</target>
+            </trans-unit>
+            <trans-unit id="action_save">
+                <source>action_save</source>
+                <target>Save</target>
+            </trans-unit>
+            <trans-unit id="label_none">
+                <source>label_none</source>
+                <target>no label</target>
+            </trans-unit>
+            <trans-unit id="action_successful">
+                <source>action_successful</source>
+                <target>Action successful</target>
+            </trans-unit>
+            <trans-unit id="label_advertising_page">
+                <source>label_advertising_page</source>
+                <target>Advertising service</target>
+            </trans-unit>
+            <trans-unit id="label_logged_in_as">
+                <source>label_logged_in_as</source>
+                <target>You are logged in as</target>
+            </trans-unit>
+            <trans-unit id="choose_password">
+                <source>choose_password</source>
+                <target>Choose your password</target>
+            </trans-unit>
+            <trans-unit id="email_not_valid">
+                <source>email_not_valid</source>
+                <target>The email you entered is not valid</target>
+            </trans-unit>
+            <trans-unit id="label_page_not_found">
+                <source>label_page_not_found</source>
+                <target>Page not found</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

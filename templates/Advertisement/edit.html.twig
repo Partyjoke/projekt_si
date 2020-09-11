@@ -1,0 +1,12 @@
+{% include 'default/_form.html.twig' with {
+    page_title: 'action_edit',
+    page_title_param: {'%id%': Advertisement.id},
+    attr: {
+        method: 'PUT',
+        action: url('Advertisement_edit', {'id': Advertisement.id}),
+    },
+    back_to_list_path: 'Advertisement_index',
+} %}
+
+
+

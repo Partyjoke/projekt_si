@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title_category_details'|trans({'%id%': category.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'action_show_details'|trans({'%id%': category.id|default('')}) }}</h1>
+
+
+    {% if category is defined and category|length %}
+        <dl class="dl-horizontal">
+            <dt>{{ 'label_id'|trans }}</dt>
+            <dd>{{ category.id }}</dd>
+            <dt>{{ 'label_created_at'|trans }}</dt>
+            <dd>{{ category.createdAt|date }}</dd>
+            <dt>{{ 'label_updated_at'|trans }}</dt>
+            <dd>{{ category.updatedAt|date }}</dd>
+            <dt>{{ 'label_title'|trans }}</dt>
+            <dd>{{ category.title }}</dd>
+
+        </dl>
+        {% if is_granted('ROLE_ADMIN') %}
+            <p>
+                <a class="btn btn-warning" href="{{ url('category_edit', {id: category.id}) }}" title="{{ 'action_edit'|trans }}">
+                    {{ 'action_edit'|trans }}
+                </a>
+                <a class="btn btn-danger" href="{{ url('category_delete', {id: category.id}) }}" title="{{ 'action_delete'|trans }}">
+                    {{ 'action_delete'|trans }}
+                </a>
+            </p>
+        {% endif %}
+
+        <p>
+            <a href="{{ url('category_index') }}" title="{{ 'action_back_to_list'|trans }}">
+                {{ 'action_back_to_list'|trans }}
+            </a>
+        </p>
+
+        {% if category.Advertisements|length != 0 %}
+            <h2>advertisements</h2>
+            {% for adv  in category.Advertisements %}
+                <p>
+                    <a class="btn btn-link" href="{{ url('Advertisement_show', {id: adv.id}) }}">{{ adv.title }}</a>
+                </p>
+            {% endfor %}
+        {% endif %}
+    {% else %}
+        <p>
+            {{ 'message_item_not_found'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}
+

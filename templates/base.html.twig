@@ -1,12 +1,117 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}Welcome to the Advertising page{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    {% endblock %}
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+
+            padding: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: lightgray;
+
+        }
+
+        .navbar-nav li a:hover {
+            color: #1abc9c !important;
+        }
+
+        /* Add a background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+            position: fixed;
+            height: 100px;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .content {
+            padding: 10px;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar bg-success">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url('Advertisement_index') }}" title="{{ 'action_view'|trans }}">
+                        {{ 'action_show_advertisement_list'|trans }}
+                    </a></li>
+                <li><a href="{{ url('category_index') }}" title="{{ 'action_view'|trans }}">
+                        {{ 'action_show_category_list'|trans }}
+                    </a></li>
+                <li><a href="{{ url('Advertisement_create') }}" title="{{ 'action_view'|trans }}">
+                        {{ 'action_create_advertisement'|trans }}
+                    </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right d-flex align-items-center">
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    <li><a href="">{{ app.user.email }}</a></li>
+                    <li><a href="{{ url('app_logout') }}">{{ 'action_logout'|trans }}</a></li>
+                    <li><a href="{{ url('security_edit', {id: app.user.id}) }}">{{ 'action_change_password'|trans }}</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{{ url('app_login') }}">{{ 'action_login'|trans }}</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{# ... #}
+<div class="content">
+    {% include 'default/_flash_messages.html.twig' %}
+    {% block body %}{% endblock %}
+</div>
+{# ... #}
+
+
+<footer class="container-fluid text-center fixed-bottom">
+    <p>{{ 'label_advertising_page'|trans }}</p>
+</footer>
+
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+            integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+            crossorigin="anonymous"></script>
+    <script>
+        $('.dropdown-toggle').dropdown();
+    </script>
+{% endblock %}
+</body>
 </html>

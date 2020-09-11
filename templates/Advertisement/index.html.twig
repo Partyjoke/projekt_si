@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'action_show_advertisement_list'|trans }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>{{ 'action_show_advertisement_list'|trans }}</h1>
+    {% if pagination is defined and pagination.items|length %}
+
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ knp_pagination_sortable(pagination, 'label_updated_at'|trans, 'Advertisement.updatedAt') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label_title'|trans, 'Advertisement.title') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label_category'|trans, 'category.title') }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for Advertisement in pagination.items %}
+                <tr>
+                    <td>{{ Advertisement.updatedAt|date }}</td>
+                    <td>
+                        <a href="{{ url('Advertisement_show', {id: Advertisement.id}) }}" title="{{ 'action_view'|trans }}">
+                            {{ Advertisement.title }}
+                        </a>
+                    </td>
+                    <td><a href="{{ url('category_show', {id: Advertisement.category.id}) }}">{{ Advertisement.category.title }}</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+    {% else %}
+        <p>
+            {{ 'message_empty_list'|trans }}
+        </p>
+    {% endif %}
+
+{% endblock %}
