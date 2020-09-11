@@ -6,14 +6,11 @@
 namespace App\Entity;
 
 use DateTimeInterface;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
-use Symfony\Component\HttpFoundation\Response;
 
 
 /**
@@ -21,6 +18,8 @@ use Symfony\Component\HttpFoundation\Response;
  *
  * @ORM\Entity(repositoryClass="App\Repository\AdvertisementRepository")
  * @ORM\Table(name="Advertisements")
+ *
+ * @UniqueEntity(fields={"title"})
  */
 class Advertisement
 {
@@ -95,6 +94,13 @@ class Advertisement
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\Type("string")
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *     min="3",
+     *     max="65535",
+     * )
      */
     private $content;
 
