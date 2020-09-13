@@ -102,6 +102,9 @@
     "egulias/email-validator": {
         "version": "2.1.20"
     },
+    "escapestudios/symfony2-coding-standard": {
+        "version": "3.11.0"
+    },
     "fzaninotto/faker": {
         "version": "v1.9.1"
     },
@@ -178,6 +181,18 @@
         },
         "files": [
             "./config/packages/security_checker.yaml"
+        ]
+    },
+    "squizlabs/php_codesniffer": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "0dc9cceda799fd3a08b96987e176a261028a3709"
+        },
+        "files": [
+            "./phpcs.xml.dist"
         ]
     },
     "stof/doctrine-extensions-bundle": {

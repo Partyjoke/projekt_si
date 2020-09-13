@@ -93,6 +93,8 @@ class Advertisement
     private $category;
 
     /**
+     * Comment.
+     *
      * @ORM\Column(type="string", length=255)
      *
      * @Assert\Type("string")
@@ -108,9 +110,9 @@ class Advertisement
     /**
      * Getter for Id.
      *
-     * @return int|null Result
+     * @return int Result
      */
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
@@ -118,9 +120,9 @@ class Advertisement
     /**
      * Getter for Created At.
      *
-     * @return DateTimeInterface|null Created at
+     * @return DateTimeInterface Created at
      */
-    public function getCreatedAt(): ?DateTimeInterface
+    public function getCreatedAt(): DateTimeInterface
     {
         return $this->createdAt;
     }
@@ -138,9 +140,9 @@ class Advertisement
     /**
      * Getter for Updated at.
      *
-     * @return DateTimeInterface|null Updated at
+     * @return DateTimeInterface Updated at
      */
-    public function getUpdatedAt(): ?DateTimeInterface
+    public function getUpdatedAt(): DateTimeInterface
     {
         return $this->updatedAt;
     }
@@ -158,9 +160,9 @@ class Advertisement
     /**
      * Getter for Title.
      *
-     * @return string|null Title
+     * @return string Title
      */
-    public function getTitle(): ?string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -178,9 +180,9 @@ class Advertisement
     /**
      * Getter for category.
      *
-     * @return Category|null Category
+     * @return Category Category
      */
-    public function getCategory(): ?Category
+    public function getCategory(): Category
     {
         return $this->category;
     }
@@ -188,14 +190,19 @@ class Advertisement
     /**
      * Setter for category.
      *
-     * @param Category|null $category Category
+     * @param Category $category Category
      */
-    public function setCategory(?Category $category): void
+    public function setCategory(Category $category): void
     {
         $this->category = $category;
     }
 
-    public function getContent(): ?string
+    /**
+     * Getter for count
+     *
+     * @return string
+     */
+    public function getContent(): string
     {
         return $this->content;
     }
