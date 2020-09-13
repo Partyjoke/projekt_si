@@ -108,7 +108,7 @@
             </trans-unit>
             <trans-unit id="action_save">
                 <source>action_save</source>
-                <target>Zachowaj</target>
+                <target>Zatwierdz</target>
             </trans-unit>
             <trans-unit id="action_register">
                 <source>action_register</source>
@@ -160,11 +160,11 @@
             </trans-unit>
             <trans-unit id="label_page_not_found">
                 <source>label_page_not_found</source>
-                <target>Strona nie została znaleziona</target>
+                <target>Strona nie znaleziona</target>
             </trans-unit>
              <trans-unit id="message_category_contains_Advertisements">
                             <source>message_category_contains_Advertisements</source>
-                            <target>nie możesz usunąć kategori z powązanymi ogloszeniami</target>
+                            <target>nie mozna usuwac kategorii z powązanymi ogloszeniami</target>
                         </trans-unit>
         </body>
     </file>

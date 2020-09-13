@@ -21,7 +21,7 @@
             <tbody>
             {% for Advertisement in pagination.items %}
                 <tr>
-                    <td>{{ Advertisement.updatedAt|date }}</td>
+                    <td>{{ Advertisement.updatedAt|date('m/d/Y') }}</td>
                     <td>
                         <a href="{{ url('Advertisement_show', {id: Advertisement.id}) }}" title="{{ 'action_view'|trans }}">
                             {{ Advertisement.title }}
